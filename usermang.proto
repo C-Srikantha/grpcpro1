@@ -19,12 +19,21 @@ message UserInfo{
     int32 age=3;
     int64 Phone=4;
 }
-    
+message Useroutput{
+    string mess=1;
+}
+message AllUser{
+    repeated UserInfo info=1;
+}
+
     
 
 
 service Usermanagement{
     rpc CreateNewUser(NewUser) returns (User){}
     rpc GetaUser(UserId) returns(UserInfo){}
+    rpc GetAllUser(UserId) returns(AllUser){}
+    rpc PostaUser(UserInfo) returns(Useroutput){}
+    rpc DeleteaUser(UserId) returns(Useroutput){}
 }
 
