@@ -25,15 +25,31 @@ message Useroutput{
 message AllUser{
     repeated UserInfo info=1;
 }
+message Empty{
+}
+message CollegeInfo{
+    int32 id=1;
+    string collagecode=2;
+    string collegename=3;
+    string collegelocation=4;
+    collegecontact contact=5;
 
+}
+message collegecontact{
+    int64 phone=1;
+    string email=2;
+}
     
 
 
 service Usermanagement{
     rpc CreateNewUser(NewUser) returns (User){}
     rpc GetaUser(UserId) returns(UserInfo){}
-    rpc GetAllUser(UserId) returns(AllUser){}
+    rpc GetAllUser(Empty) returns(AllUser){}
     rpc PostaUser(UserInfo) returns(Useroutput){}
     rpc DeleteaUser(UserId) returns(Useroutput){}
+    rpc UpdateUser(UserInfo) returns(Useroutput){}
+    rpc PostCollegeDet(CollegeInfo) returns(Useroutput){}
+    rpc GetaCollegeDet(UserId) returns(CollegeInfo){}
 }
 

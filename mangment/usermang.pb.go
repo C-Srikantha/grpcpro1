@@ -354,6 +354,178 @@ func (x *AllUser) GetInfo() []*UserInfo {
 	return nil
 }
 
+type Empty struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *Empty) Reset() {
+	*x = Empty{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_usermang_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Empty) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Empty) ProtoMessage() {}
+
+func (x *Empty) ProtoReflect() protoreflect.Message {
+	mi := &file_usermang_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Empty.ProtoReflect.Descriptor instead.
+func (*Empty) Descriptor() ([]byte, []int) {
+	return file_usermang_proto_rawDescGZIP(), []int{6}
+}
+
+type CollegeInfo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id              int32           `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Collagecode     string          `protobuf:"bytes,2,opt,name=collagecode,proto3" json:"collagecode,omitempty"`
+	Collegename     string          `protobuf:"bytes,3,opt,name=collegename,proto3" json:"collegename,omitempty"`
+	Collegelocation string          `protobuf:"bytes,4,opt,name=collegelocation,proto3" json:"collegelocation,omitempty"`
+	Contact         *Collegecontact `protobuf:"bytes,5,opt,name=contact,proto3" json:"contact,omitempty"`
+}
+
+func (x *CollegeInfo) Reset() {
+	*x = CollegeInfo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_usermang_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CollegeInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CollegeInfo) ProtoMessage() {}
+
+func (x *CollegeInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_usermang_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CollegeInfo.ProtoReflect.Descriptor instead.
+func (*CollegeInfo) Descriptor() ([]byte, []int) {
+	return file_usermang_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *CollegeInfo) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *CollegeInfo) GetCollagecode() string {
+	if x != nil {
+		return x.Collagecode
+	}
+	return ""
+}
+
+func (x *CollegeInfo) GetCollegename() string {
+	if x != nil {
+		return x.Collegename
+	}
+	return ""
+}
+
+func (x *CollegeInfo) GetCollegelocation() string {
+	if x != nil {
+		return x.Collegelocation
+	}
+	return ""
+}
+
+func (x *CollegeInfo) GetContact() *Collegecontact {
+	if x != nil {
+		return x.Contact
+	}
+	return nil
+}
+
+type Collegecontact struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Phone int64  `protobuf:"varint,1,opt,name=phone,proto3" json:"phone,omitempty"`
+	Email string `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+}
+
+func (x *Collegecontact) Reset() {
+	*x = Collegecontact{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_usermang_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Collegecontact) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Collegecontact) ProtoMessage() {}
+
+func (x *Collegecontact) ProtoReflect() protoreflect.Message {
+	mi := &file_usermang_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Collegecontact.ProtoReflect.Descriptor instead.
+func (*Collegecontact) Descriptor() ([]byte, []int) {
+	return file_usermang_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *Collegecontact) GetPhone() int64 {
+	if x != nil {
+		return x.Phone
+	}
+	return 0
+}
+
+func (x *Collegecontact) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
 var File_usermang_proto protoreflect.FileDescriptor
 
 var file_usermang_proto_rawDesc = []byte{
@@ -378,25 +550,53 @@ var file_usermang_proto_rawDesc = []byte{
 	0x07, 0x41, 0x6c, 0x6c, 0x55, 0x73, 0x65, 0x72, 0x12, 0x26, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e,
 	0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f,
-	0x32, 0xa1, 0x02, 0x0a, 0x0e, 0x55, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x6d,
-	0x65, 0x6e, 0x74, 0x12, 0x34, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x65, 0x77,
-	0x55, 0x73, 0x65, 0x72, 0x12, 0x11, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e,
-	0x4e, 0x65, 0x77, 0x55, 0x73, 0x65, 0x72, 0x1a, 0x0e, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61,
-	0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x22, 0x00, 0x12, 0x32, 0x0a, 0x08, 0x47, 0x65, 0x74,
-	0x61, 0x55, 0x73, 0x65, 0x72, 0x12, 0x10, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67,
-	0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x1a, 0x12, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61,
-	0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x00, 0x12, 0x33, 0x0a,
-	0x0a, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x55, 0x73, 0x65, 0x72, 0x12, 0x10, 0x2e, 0x75, 0x73,
-	0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x1a, 0x11, 0x2e,
-	0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x41, 0x6c, 0x6c, 0x55, 0x73, 0x65, 0x72,
-	0x22, 0x00, 0x12, 0x37, 0x0a, 0x09, 0x50, 0x6f, 0x73, 0x74, 0x61, 0x55, 0x73, 0x65, 0x72, 0x12,
-	0x12, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49,
-	0x6e, 0x66, 0x6f, 0x1a, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55,
-	0x73, 0x65, 0x72, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74, 0x22, 0x00, 0x12, 0x37, 0x0a, 0x0b, 0x44,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x61, 0x55, 0x73, 0x65, 0x72, 0x12, 0x10, 0x2e, 0x75, 0x73, 0x65,
-	0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x1a, 0x14, 0x2e, 0x75,
-	0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x6f, 0x75, 0x74, 0x70,
-	0x75, 0x74, 0x22, 0x00, 0x42, 0x0c, 0x5a, 0x0a, 0x2e, 0x3b, 0x6d, 0x61, 0x6e, 0x67, 0x6d, 0x65,
+	0x22, 0x07, 0x0a, 0x05, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0xbf, 0x01, 0x0a, 0x0b, 0x43, 0x6f,
+	0x6c, 0x6c, 0x65, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x69, 0x64, 0x12, 0x20, 0x0a, 0x0b, 0x63, 0x6f, 0x6c,
+	0x6c, 0x61, 0x67, 0x65, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x63, 0x6f, 0x6c, 0x6c, 0x61, 0x67, 0x65, 0x63, 0x6f, 0x64, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x63,
+	0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0b, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x28, 0x0a,
+	0x0f, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x6c,
+	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x32, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x61,
+	0x63, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d,
+	0x61, 0x6e, 0x67, 0x2e, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x63, 0x6f, 0x6e, 0x74, 0x61,
+	0x63, 0x74, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x22, 0x3c, 0x0a, 0x0e, 0x63,
+	0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x12, 0x14, 0x0a,
+	0x05, 0x70, 0x68, 0x6f, 0x6e, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x70, 0x68,
+	0x6f, 0x6e, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x32, 0xd8, 0x03, 0x0a, 0x0e, 0x55, 0x73,
+	0x65, 0x72, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x34, 0x0a, 0x0d,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x65, 0x77, 0x55, 0x73, 0x65, 0x72, 0x12, 0x11, 0x2e,
+	0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x4e, 0x65, 0x77, 0x55, 0x73, 0x65, 0x72,
+	0x1a, 0x0e, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72,
+	0x22, 0x00, 0x12, 0x32, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x61, 0x55, 0x73, 0x65, 0x72, 0x12, 0x10,
+	0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64,
+	0x1a, 0x12, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72,
+	0x49, 0x6e, 0x66, 0x6f, 0x22, 0x00, 0x12, 0x32, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c,
+	0x55, 0x73, 0x65, 0x72, 0x12, 0x0f, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e,
+	0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x11, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67,
+	0x2e, 0x41, 0x6c, 0x6c, 0x55, 0x73, 0x65, 0x72, 0x22, 0x00, 0x12, 0x37, 0x0a, 0x09, 0x50, 0x6f,
+	0x73, 0x74, 0x61, 0x55, 0x73, 0x65, 0x72, 0x12, 0x12, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61,
+	0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x1a, 0x14, 0x2e, 0x75, 0x73,
+	0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x6f, 0x75, 0x74, 0x70, 0x75,
+	0x74, 0x22, 0x00, 0x12, 0x37, 0x0a, 0x0b, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x61, 0x55, 0x73,
+	0x65, 0x72, 0x12, 0x10, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73,
+	0x65, 0x72, 0x49, 0x64, 0x1a, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e,
+	0x55, 0x73, 0x65, 0x72, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74, 0x22, 0x00, 0x12, 0x38, 0x0a, 0x0a,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x12, 0x12, 0x2e, 0x75, 0x73, 0x65,
+	0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x1a, 0x14,
+	0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x6f, 0x75,
+	0x74, 0x70, 0x75, 0x74, 0x22, 0x00, 0x12, 0x3f, 0x0a, 0x0e, 0x50, 0x6f, 0x73, 0x74, 0x43, 0x6f,
+	0x6c, 0x6c, 0x65, 0x67, 0x65, 0x44, 0x65, 0x74, 0x12, 0x15, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d,
+	0x61, 0x6e, 0x67, 0x2e, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x1a,
+	0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x6f,
+	0x75, 0x74, 0x70, 0x75, 0x74, 0x22, 0x00, 0x12, 0x3b, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x61, 0x43,
+	0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x44, 0x65, 0x74, 0x12, 0x10, 0x2e, 0x75, 0x73, 0x65, 0x72,
+	0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x1a, 0x15, 0x2e, 0x75, 0x73,
+	0x65, 0x72, 0x6d, 0x61, 0x6e, 0x67, 0x2e, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x49, 0x6e,
+	0x66, 0x6f, 0x22, 0x00, 0x42, 0x0c, 0x5a, 0x0a, 0x2e, 0x3b, 0x6d, 0x61, 0x6e, 0x67, 0x6d, 0x65,
 	0x6e, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
@@ -412,32 +612,42 @@ func file_usermang_proto_rawDescGZIP() []byte {
 	return file_usermang_proto_rawDescData
 }
 
-var file_usermang_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_usermang_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_usermang_proto_goTypes = []interface{}{
-	(*NewUser)(nil),    // 0: usermang.NewUser
-	(*User)(nil),       // 1: usermang.User
-	(*UserId)(nil),     // 2: usermang.UserId
-	(*UserInfo)(nil),   // 3: usermang.UserInfo
-	(*Useroutput)(nil), // 4: usermang.Useroutput
-	(*AllUser)(nil),    // 5: usermang.AllUser
+	(*NewUser)(nil),        // 0: usermang.NewUser
+	(*User)(nil),           // 1: usermang.User
+	(*UserId)(nil),         // 2: usermang.UserId
+	(*UserInfo)(nil),       // 3: usermang.UserInfo
+	(*Useroutput)(nil),     // 4: usermang.Useroutput
+	(*AllUser)(nil),        // 5: usermang.AllUser
+	(*Empty)(nil),          // 6: usermang.Empty
+	(*CollegeInfo)(nil),    // 7: usermang.CollegeInfo
+	(*Collegecontact)(nil), // 8: usermang.collegecontact
 }
 var file_usermang_proto_depIdxs = []int32{
-	3, // 0: usermang.AllUser.info:type_name -> usermang.UserInfo
-	0, // 1: usermang.Usermanagement.CreateNewUser:input_type -> usermang.NewUser
-	2, // 2: usermang.Usermanagement.GetaUser:input_type -> usermang.UserId
-	2, // 3: usermang.Usermanagement.GetAllUser:input_type -> usermang.UserId
-	3, // 4: usermang.Usermanagement.PostaUser:input_type -> usermang.UserInfo
-	2, // 5: usermang.Usermanagement.DeleteaUser:input_type -> usermang.UserId
-	1, // 6: usermang.Usermanagement.CreateNewUser:output_type -> usermang.User
-	3, // 7: usermang.Usermanagement.GetaUser:output_type -> usermang.UserInfo
-	5, // 8: usermang.Usermanagement.GetAllUser:output_type -> usermang.AllUser
-	4, // 9: usermang.Usermanagement.PostaUser:output_type -> usermang.Useroutput
-	4, // 10: usermang.Usermanagement.DeleteaUser:output_type -> usermang.Useroutput
-	6, // [6:11] is the sub-list for method output_type
-	1, // [1:6] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	3,  // 0: usermang.AllUser.info:type_name -> usermang.UserInfo
+	8,  // 1: usermang.CollegeInfo.contact:type_name -> usermang.collegecontact
+	0,  // 2: usermang.Usermanagement.CreateNewUser:input_type -> usermang.NewUser
+	2,  // 3: usermang.Usermanagement.GetaUser:input_type -> usermang.UserId
+	6,  // 4: usermang.Usermanagement.GetAllUser:input_type -> usermang.Empty
+	3,  // 5: usermang.Usermanagement.PostaUser:input_type -> usermang.UserInfo
+	2,  // 6: usermang.Usermanagement.DeleteaUser:input_type -> usermang.UserId
+	3,  // 7: usermang.Usermanagement.UpdateUser:input_type -> usermang.UserInfo
+	7,  // 8: usermang.Usermanagement.PostCollegeDet:input_type -> usermang.CollegeInfo
+	2,  // 9: usermang.Usermanagement.GetaCollegeDet:input_type -> usermang.UserId
+	1,  // 10: usermang.Usermanagement.CreateNewUser:output_type -> usermang.User
+	3,  // 11: usermang.Usermanagement.GetaUser:output_type -> usermang.UserInfo
+	5,  // 12: usermang.Usermanagement.GetAllUser:output_type -> usermang.AllUser
+	4,  // 13: usermang.Usermanagement.PostaUser:output_type -> usermang.Useroutput
+	4,  // 14: usermang.Usermanagement.DeleteaUser:output_type -> usermang.Useroutput
+	4,  // 15: usermang.Usermanagement.UpdateUser:output_type -> usermang.Useroutput
+	4,  // 16: usermang.Usermanagement.PostCollegeDet:output_type -> usermang.Useroutput
+	7,  // 17: usermang.Usermanagement.GetaCollegeDet:output_type -> usermang.CollegeInfo
+	10, // [10:18] is the sub-list for method output_type
+	2,  // [2:10] is the sub-list for method input_type
+	2,  // [2:2] is the sub-list for extension type_name
+	2,  // [2:2] is the sub-list for extension extendee
+	0,  // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_usermang_proto_init() }
@@ -518,6 +728,42 @@ func file_usermang_proto_init() {
 				return nil
 			}
 		}
+		file_usermang_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Empty); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_usermang_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CollegeInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_usermang_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Collegecontact); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -525,7 +771,7 @@ func file_usermang_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_usermang_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -553,9 +799,12 @@ const _ = grpc.SupportPackageIsVersion6
 type UsermanagementClient interface {
 	CreateNewUser(ctx context.Context, in *NewUser, opts ...grpc.CallOption) (*User, error)
 	GetaUser(ctx context.Context, in *UserId, opts ...grpc.CallOption) (*UserInfo, error)
-	GetAllUser(ctx context.Context, in *UserId, opts ...grpc.CallOption) (*AllUser, error)
+	GetAllUser(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*AllUser, error)
 	PostaUser(ctx context.Context, in *UserInfo, opts ...grpc.CallOption) (*Useroutput, error)
 	DeleteaUser(ctx context.Context, in *UserId, opts ...grpc.CallOption) (*Useroutput, error)
+	UpdateUser(ctx context.Context, in *UserInfo, opts ...grpc.CallOption) (*Useroutput, error)
+	PostCollegeDet(ctx context.Context, in *CollegeInfo, opts ...grpc.CallOption) (*Useroutput, error)
+	GetaCollegeDet(ctx context.Context, in *UserId, opts ...grpc.CallOption) (*CollegeInfo, error)
 }
 
 type usermanagementClient struct {
@@ -584,7 +833,7 @@ func (c *usermanagementClient) GetaUser(ctx context.Context, in *UserId, opts ..
 	return out, nil
 }
 
-func (c *usermanagementClient) GetAllUser(ctx context.Context, in *UserId, opts ...grpc.CallOption) (*AllUser, error) {
+func (c *usermanagementClient) GetAllUser(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*AllUser, error) {
 	out := new(AllUser)
 	err := c.cc.Invoke(ctx, "/usermang.Usermanagement/GetAllUser", in, out, opts...)
 	if err != nil {
@@ -611,13 +860,43 @@ func (c *usermanagementClient) DeleteaUser(ctx context.Context, in *UserId, opts
 	return out, nil
 }
 
+func (c *usermanagementClient) UpdateUser(ctx context.Context, in *UserInfo, opts ...grpc.CallOption) (*Useroutput, error) {
+	out := new(Useroutput)
+	err := c.cc.Invoke(ctx, "/usermang.Usermanagement/UpdateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *usermanagementClient) PostCollegeDet(ctx context.Context, in *CollegeInfo, opts ...grpc.CallOption) (*Useroutput, error) {
+	out := new(Useroutput)
+	err := c.cc.Invoke(ctx, "/usermang.Usermanagement/PostCollegeDet", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *usermanagementClient) GetaCollegeDet(ctx context.Context, in *UserId, opts ...grpc.CallOption) (*CollegeInfo, error) {
+	out := new(CollegeInfo)
+	err := c.cc.Invoke(ctx, "/usermang.Usermanagement/GetaCollegeDet", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UsermanagementServer is the server API for Usermanagement service.
 type UsermanagementServer interface {
 	CreateNewUser(context.Context, *NewUser) (*User, error)
 	GetaUser(context.Context, *UserId) (*UserInfo, error)
-	GetAllUser(context.Context, *UserId) (*AllUser, error)
+	GetAllUser(context.Context, *Empty) (*AllUser, error)
 	PostaUser(context.Context, *UserInfo) (*Useroutput, error)
 	DeleteaUser(context.Context, *UserId) (*Useroutput, error)
+	UpdateUser(context.Context, *UserInfo) (*Useroutput, error)
+	PostCollegeDet(context.Context, *CollegeInfo) (*Useroutput, error)
+	GetaCollegeDet(context.Context, *UserId) (*CollegeInfo, error)
 }
 
 // UnimplementedUsermanagementServer can be embedded to have forward compatible implementations.
@@ -630,7 +909,7 @@ func (*UnimplementedUsermanagementServer) CreateNewUser(context.Context, *NewUse
 func (*UnimplementedUsermanagementServer) GetaUser(context.Context, *UserId) (*UserInfo, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetaUser not implemented")
 }
-func (*UnimplementedUsermanagementServer) GetAllUser(context.Context, *UserId) (*AllUser, error) {
+func (*UnimplementedUsermanagementServer) GetAllUser(context.Context, *Empty) (*AllUser, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllUser not implemented")
 }
 func (*UnimplementedUsermanagementServer) PostaUser(context.Context, *UserInfo) (*Useroutput, error) {
@@ -638,6 +917,15 @@ func (*UnimplementedUsermanagementServer) PostaUser(context.Context, *UserInfo) 
 }
 func (*UnimplementedUsermanagementServer) DeleteaUser(context.Context, *UserId) (*Useroutput, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteaUser not implemented")
+}
+func (*UnimplementedUsermanagementServer) UpdateUser(context.Context, *UserInfo) (*Useroutput, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
+}
+func (*UnimplementedUsermanagementServer) PostCollegeDet(context.Context, *CollegeInfo) (*Useroutput, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PostCollegeDet not implemented")
+}
+func (*UnimplementedUsermanagementServer) GetaCollegeDet(context.Context, *UserId) (*CollegeInfo, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetaCollegeDet not implemented")
 }
 
 func RegisterUsermanagementServer(s *grpc.Server, srv UsermanagementServer) {
@@ -681,7 +969,7 @@ func _Usermanagement_GetaUser_Handler(srv interface{}, ctx context.Context, dec 
 }
 
 func _Usermanagement_GetAllUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserId)
+	in := new(Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -693,7 +981,7 @@ func _Usermanagement_GetAllUser_Handler(srv interface{}, ctx context.Context, de
 		FullMethod: "/usermang.Usermanagement/GetAllUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UsermanagementServer).GetAllUser(ctx, req.(*UserId))
+		return srv.(UsermanagementServer).GetAllUser(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -734,6 +1022,60 @@ func _Usermanagement_DeleteaUser_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Usermanagement_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserInfo)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UsermanagementServer).UpdateUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/usermang.Usermanagement/UpdateUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UsermanagementServer).UpdateUser(ctx, req.(*UserInfo))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Usermanagement_PostCollegeDet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CollegeInfo)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UsermanagementServer).PostCollegeDet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/usermang.Usermanagement/PostCollegeDet",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UsermanagementServer).PostCollegeDet(ctx, req.(*CollegeInfo))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Usermanagement_GetaCollegeDet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserId)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UsermanagementServer).GetaCollegeDet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/usermang.Usermanagement/GetaCollegeDet",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UsermanagementServer).GetaCollegeDet(ctx, req.(*UserId))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Usermanagement_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "usermang.Usermanagement",
 	HandlerType: (*UsermanagementServer)(nil),
@@ -757,6 +1099,18 @@ var _Usermanagement_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteaUser",
 			Handler:    _Usermanagement_DeleteaUser_Handler,
+		},
+		{
+			MethodName: "UpdateUser",
+			Handler:    _Usermanagement_UpdateUser_Handler,
+		},
+		{
+			MethodName: "PostCollegeDet",
+			Handler:    _Usermanagement_PostCollegeDet_Handler,
+		},
+		{
+			MethodName: "GetaCollegeDet",
+			Handler:    _Usermanagement_GetaCollegeDet_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

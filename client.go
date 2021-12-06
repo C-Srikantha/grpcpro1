@@ -18,7 +18,8 @@ type details struct {
 func main() {
 	det := []details{
 		{Name: "Srikantha", Age: 22, Phone: 8766565722},
-		{Name: "Anil", Age: 21, Phone: 8766567622},
+		{Name: "Anil", Age: 21, Phone: 9766567622},
+		{Name: "Harsha", Age: 18, Phone: 62564522722},
 	}
 	conn, err := grpc.Dial(":8081", grpc.WithInsecure())
 	if err != nil {
@@ -51,7 +52,7 @@ func main() {
 			fmt.Println(postres)
 		}
 	}
-	time.Sleep(2 * time.Second)
+	time.Sleep(1 * time.Second)
 	getres, err := c.GetaUser(context.Background(), &mangment.UserId{Id: 1})
 	if err != nil {
 		fmt.Println(err)
@@ -59,18 +60,38 @@ func main() {
 		fmt.Println(getres)
 	}
 	time.Sleep(1 * time.Second)
-	getallres, err := c.GetAllUser(context.Background(), &mangment.UserId{Id: 1})
+	getallres, err := c.GetAllUser(context.Background(), &mangment.Empty{})
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println(getallres)
+		fmt.Println(getallres.Info)
 	}
-	//time.Sleep(2 * time.Second)
-	/*delres, err := c.DeleteaUser(context.Background(), &mangment.UserId{Id: 1})
+	time.Sleep(1 * time.Second)
+	updateres, err := c.UpdateUser(context.Background(), &mangment.UserInfo{Id: 3, Name: "Harsha", Age: 22, Phone: 1234567890})
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(updateres)
+	}
+	time.Sleep(1 * time.Second)
+	delres, err := c.DeleteaUser(context.Background(), &mangment.UserId{Id: 1})
 	if err != nil {
 		fmt.Println(err)
 	} else {
 		fmt.Println(delres)
-	}*/
+	}
+	postCollRes, err := c.PostCollegeDet(context.Background(), &mangment.CollegeInfo{Id: 2, Collagecode: "CEC123", Collegename: "CEC",
+		Collegelocation: "Mangalore", Contact: &mangment.Collegecontact{Phone: 587265227, Email: "cec@gmail.com"}})
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(postCollRes)
+	}
+	getcoldet, err := c.GetaCollegeDet(context.Background(), &mangment.UserId{Id: 2})
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(getcoldet)
+	}
 
 }
